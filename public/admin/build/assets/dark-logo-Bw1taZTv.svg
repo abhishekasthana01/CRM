@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <defs>
+    <style>
+      .beam-pink { fill: #FF2069; }
+      .beam-white { fill: #FFFFFF; }
+    </style>
+  </defs>
+  
+  <!-- Pink Circle Icon -->
+  <circle cx="50" cy="50" r="40" class="beam-pink"/>
+  
+  <!-- Beam Symbol inside circle (simplified) -->
+  <path d="M50 25 L75 50 L50 75 L25 50 Z" class="beam-white"/>
+  <path d="M50 30 L70 50 L50 70 L30 50 Z" class="beam-pink"/>
+  
+  <!-- "beam" Text -->
+  <text x="110" y="70" font-size="55" font-weight="bold" font-family="Arial, sans-serif" class="beam-white">
+    beam
+  </text>
+</svg>

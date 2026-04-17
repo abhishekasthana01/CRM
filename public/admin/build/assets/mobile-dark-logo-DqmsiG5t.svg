@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .beam-pink { fill: #FF2069; }
+      .beam-white { fill: #FFFFFF; }
+    </style>
+  </defs>
+  
+  <circle cx="25" cy="25" r="20" class="beam-pink"/>
+  
+  <path d="M25 10 L40 25 L25 40 L10 25 Z" class="beam-white"/>
+  <path d="M25 15 L35 25 L25 35 L15 25 Z" class="beam-pink"/>
+</svg>
