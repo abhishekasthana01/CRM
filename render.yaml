@@ -4,7 +4,7 @@ services:
     env: php
     plan: starter
     buildCommand: |
-      composer install --no-dev --optimize-autoloader
+      composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-calendar --ignore-platform-req=ext-gd --ignore-platform-req=ext-zip
       npm install
       npm run build
       php artisan key:generate --force
