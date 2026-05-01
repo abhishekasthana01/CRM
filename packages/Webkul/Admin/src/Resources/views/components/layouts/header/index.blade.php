@@ -13,16 +13,14 @@
                 />
             @else
                 <img
-                    class="h-10 max-sm:hidden"
-                    src="{{ request()->cookie('dark_mode') ? vite()->asset('images/dark-logo.png') : vite()->asset('images/logo.png') }}"
-                    id="logo-image"
+                    class="logo-image h-10 max-sm:hidden"
+                    src="{{ request()->cookie('dark_mode') ? vite()->asset('images/dark-logo.svg') : vite()->asset('images/logo.svg') }}"
                     alt="{{ config('app.name') }}"
                 />
 
                 <img
-                    class="h-10 sm:hidden"
-                    src="{{ request()->cookie('dark_mode') ? vite()->asset('images/mobile-dark-logo.png') : vite()->asset('images/mobile-light-logo.png') }}"
-                    id="logo-image"
+                    class="logo-image h-10 sm:hidden"
+                    src="{{ request()->cookie('dark_mode') ? vite()->asset('images/mobile-dark-logo.svg') : vite()->asset('images/mobile-light-logo.svg') }}"
                     alt="{{ config('app.name') }}"
                 />
             @endif
@@ -78,9 +76,6 @@
 
             <!-- Admin Dropdown -->
             <x-slot:content class="mt-2 border-t-0 !p-0">
-                <div class="flex items-center gap-1.5 border border-x-0 border-b-gray-300 px-5 py-2.5 dark:border-gray-800">
-                </div>
-
                 <div class="grid gap-1 pb-2.5">
                     <a
                         class="cursor-pointer px-5 py-2 text-base text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-950"
@@ -132,9 +127,9 @@
                 return {
                     isDarkMode: {{ request()->cookie('dark_mode') ?? 0 }},
 
-                    logo: "{{ vite()->asset('images/logo.png') }}",
+                    logo: "{{ vite()->asset('images/logo.svg') }}",
 
-                    dark_logo: "{{ vite()->asset('images/dark-logo.png') }}",
+                    dark_logo: "{{ vite()->asset('images/dark-logo.svg') }}",
                 };
             },
 
@@ -153,11 +148,15 @@
                     if (this.isDarkMode) {
                         this.$emitter.emit('change-theme', 'dark');
 
-                        document.getElementById('logo-image').src = this.dark_logo;
+                        document.querySelectorAll('.logo-image').forEach(el => {
+                            el.src = this.dark_logo;
+                        });
                     } else {
                         this.$emitter.emit('change-theme', 'light');
 
-                        document.getElementById('logo-image').src = this.logo;
+                        document.querySelectorAll('.logo-image').forEach(el => {
+                            el.src = this.logo;
+                        });
                     }
                 },
 
