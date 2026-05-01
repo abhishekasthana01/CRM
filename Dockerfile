@@ -49,10 +49,9 @@ RUN chmod -R 775 storage bootstrap/cache
 # Expose port
 EXPOSE ${PORT:-8080}
 
-# Start command: run migrations then serve
-# NOTE: config:cache is NOT run at build time because env vars aren't available yet
+# Start command: cache config at runtime (picks up Railway env vars), then serve
 CMD php artisan config:cache && \
     php artisan route:cache && \
     php artisan view:cache && \
-    php artisan migrate --force && \
+    (php artisan migrate --force || echo "Migration failed - DB may not be configured yet") && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
