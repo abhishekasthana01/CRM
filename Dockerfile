@@ -50,8 +50,9 @@ RUN chmod -R 775 storage bootstrap/cache
 EXPOSE ${PORT:-8080}
 
 # Start command: cache config at runtime (picks up Railway env vars), then serve
-CMD php artisan config:cache && \
+CMD touch .env && \
+    php artisan config:cache && \
     php artisan route:cache && \
     php artisan view:cache && \
-    (php artisan migrate --force || echo "Migration failed - DB may not be configured yet") && \
+    (php artisan migrate --force --seed && touch storage/installed || echo "Migration/seed failed - check DB config") && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
