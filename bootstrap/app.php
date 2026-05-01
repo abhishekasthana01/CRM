@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        // Trust Railway's reverse proxy for correct HTTPS/IP detection
+        $middleware->trustProxies(at: '*');
+
         $middleware->append(CanInstall::class);
 
         $middleware->encryptCookies(except: [

@@ -132,6 +132,31 @@
                     dark_logo: "{{ vite()->asset('images/dark-logo.svg') }}",
                 };
             },
+            data() {
+    return {
+        isDarkMode: parseInt({{ request()->cookie('dark_mode') ?? 0 }}) || 0,
+        logo: "{{ vite()->asset('images/logo.svg') }}",
+        dark_logo: "{{ vite()->asset('images/dark-logo.svg') }}",
+    };
+},
+
+methods: {
+    toggle() {
+        this.isDarkMode = this.isDarkMode === 1 ? 0 : 1;
+        // ... rest of code
+    },
+
+    isDarkModeCookie() {
+        const cookies = document.cookie.split(';');
+        for (const cookie of cookies) {
+            const [name, value] = cookie.trim().split('=');
+            if (name === 'dark_mode') {
+                return value === '1' ? 1 : 0; // Ensure integer return
+            }
+        }
+        return 0;
+    },
+}
 
             methods: {
                 toggle() {

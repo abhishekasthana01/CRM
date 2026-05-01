@@ -85,6 +85,9 @@
                             tinymce.init({
                                 ...config,
 
+                                automatic_uploads: true,
+                                paste_data_images: true,
+
                                 file_picker_callback: function(cb, value, meta) {
                                     self2.filePickerCallback(config, cb, value, meta);
                                 },
@@ -96,25 +99,32 @@
                         filePickerCallback: function(config, cb, value, meta) {
                             let input = document.createElement('input');
                             input.setAttribute('type', 'file');
-                            input.setAttribute('accept', 'image/*');
+
+                            // Accept all file types for drag-and-drop / file picker
+                            input.setAttribute('accept', '*/*');
 
                             input.onchange = function() {
                                 let file = this.files[0];
 
-                                let reader = new FileReader();
-                                reader.readAsDataURL(file);
-                                reader.onload = function() {
-                                    let id = 'blobid' + new Date().getTime();
-                                    let blobCache = tinymce.activeEditor.editorUpload.blobCache;
-                                    let base64 = reader.result.split(',')[1];
-                                    let blobInfo = blobCache.create(id, file, base64);
+                                if (! file) return;
 
-                                    blobCache.add(blobInfo);
+                                // Upload the file to the server
+                                let formData = new FormData();
+                                formData.append('_token', config.csrfToken);
+                                formData.append('file', file);
 
-                                    cb(blobInfo.blobUri(), {
-                                        title: file.name
-                                    });
+                                let xhr = new XMLHttpRequest();
+                                xhr.open('POST', config.uploadRoute);
+                                xhr.onload = function() {
+                                    if (xhr.status >= 200 && xhr.status < 300) {
+                                        let json = JSON.parse(xhr.responseText);
+
+                                        if (json && json.location) {
+                                            cb(json.location, { title: file.name });
+                                        }
+                                    }
                                 };
+                                xhr.send(formData);
                             };
 
                             input.click();
@@ -203,6 +213,64 @@
 
                                     callback(items);
                                 }
+                            });
+
+                            // Drag & drop file upload handler
+                            editor.on('drop', (e) => {
+                                let dataTransfer = e.dataTransfer;
+
+                                if (! dataTransfer || ! dataTransfer.files || dataTransfer.files.length === 0) {
+                                    return;
+                                }
+
+                                e.preventDefault();
+                                e.stopPropagation();
+
+                                Array.from(dataTransfer.files).forEach((file) => {
+                                    let isImage = file.type.startsWith('image/');
+
+                                    // For images, let TinyMCE's built-in handler take over
+                                    if (isImage) {
+                                        return;
+                                    }
+
+                                    // For non-image files (PDF, docs, etc.), upload and insert as link
+                                    let formData = new FormData();
+                                    formData.append('_token', '{{ csrf_token() }}');
+                                    formData.append('file', file);
+
+                                    let xhr = new XMLHttpRequest();
+                                    xhr.open('POST', '{{ route('admin.tinymce.upload') }}');
+                                    xhr.onload = function() {
+                                        if (xhr.status >= 200 && xhr.status < 300) {
+                                            let json = JSON.parse(xhr.responseText);
+
+                                            if (json && json.location) {
+                                                editor.insertContent(
+                                                    `<a href="${json.location}" target="_blank" title="${file.name}">📎 ${file.name}</a>&nbsp;`
+                                                );
+                                            }
+                                        }
+                                    };
+                                    xhr.send(formData);
+                                });
+                            });
+
+                            // Visual drag-over feedback
+                            editor.on('dragover', (e) => {
+                                e.preventDefault();
+                                editor.getBody().style.outline = '2px dashed #6366f1';
+                                editor.getBody().style.outlineOffset = '-4px';
+                            });
+
+                            editor.on('dragleave', () => {
+                                editor.getBody().style.outline = '';
+                                editor.getBody().style.outlineOffset = '';
+                            });
+
+                            editor.on('drop', () => {
+                                editor.getBody().style.outline = '';
+                                editor.getBody().style.outlineOffset = '';
                             });
 
                             ['change', 'paste', 'keyup'].forEach((event) => {
