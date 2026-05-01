@@ -1,24 +1,3 @@
-# Railway Nixpacks configuration for Krayin CRM (Laravel 12)
-
-[phases.setup]
-nixPkgs = ["php83", "php83Extensions.pdo", "php83Extensions.pdo_mysql", "php83Extensions.mbstring", "php83Extensions.xml", "php83Extensions.curl", "php83Extensions.zip", "php83Extensions.gd", "php83Extensions.bcmath", "php83Extensions.intl", "php83Extensions.fileinfo", "php83Extensions.tokenizer", "php83Extensions.ctype", "php83Extensions.openssl", "php83Extensions.pdo_sqlite", "nodejs_20"]
-
-[phases.install]
-cmds = [
-    "mkdir -p /etc/php/conf.d",
-    "echo 'memory_limit=512M' > /etc/php/conf.d/memory.ini",
-    "composer install --no-dev --optimize-autoloader --no-interaction",
-    "npm ci"
-]
-
-[phases.build]
-cmds = [
-    "npm run build",
-    "php artisan config:cache",
-    "php artisan route:cache",
-    "php artisan view:cache",
-    "php artisan storage:link"
-]
-
-[start]
-cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
+# Tell Railway to use the Dockerfile
+[build]
+builder = "dockerfile"

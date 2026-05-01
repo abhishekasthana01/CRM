@@ -1,0 +1,294 @@
+1. Deprecated: Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead in /Users/abhishekasthana/Desktop/laravel-crm-2.2/config/database.php on line 62
+
+2. dashboard:3666 Uncaught SyntaxError: Unexpected identifier 'methods' (at dashboard:3666:13)Understand this error
+installHook.js:1 TypeError: Cannot read properties of undefined (reading 'total_won_revenue')
+    at Proxy.render (eval at a (app-YJNogGc1.js:56:655), <anonymous>:33:437)
+    at Wa (app-YJNogGc1.js:16:18623)
+    at So.ne [as fn] (app-YJNogGc1.js:16:28348)
+    at So.run (app-YJNogGc1.js:10:1927)
+    at So.runIfDirty (app-YJNogGc1.js:10:2237)
+    at _s (app-YJNogGc1.js:14:1393)
+    at qm (app-YJNogGc1.js:14:3146)
+overrideMethod @ installHook.js:1
+TS @ app-YJNogGc1.js:14
+Yi @ app-YJNogGc1.js:14
+Wa @ app-YJNogGc1.js:16
+ne @ app-YJNogGc1.js:16
+run @ app-YJNogGc1.js:10
+runIfDirty @ app-YJNogGc1.js:10
+_s @ app-YJNogGc1.js:14
+qm @ app-YJNogGc1.js:14
+Promise.then
+Qm @ app-YJNogGc1.js:14
+Mf @ app-YJNogGc1.js:14
+U.ie.scheduler @ app-YJNogGc1.js:16
+trigger @ app-YJNogGc1.js:10
+Of @ app-YJNogGc1.js:10
+Pr @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:16
+(anonymous) @ dashboard:1581
+Promise.then
+getStats @ dashboard:1578
+mounted @ dashboard:1562
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+dashboard:1607 Uncaught TypeError: Cannot read properties of undefined (reading 'total_won_revenue')
+    at Proxy.prepare (dashboard:1607:60)
+    at dashboard:1584:38
+prepare @ dashboard:1607
+(anonymous) @ dashboard:1584
+setTimeout
+(anonymous) @ dashboard:1583
+Promise.then
+getStats @ dashboard:1578
+mounted @ dashboard:1562
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+installHook.js:1 TypeError: Cannot read properties of undefined (reading 'average_lead_value')
+    at Proxy.render (eval at a (app-YJNogGc1.js:56:655), <anonymous>:53:311)
+    at Wa (app-YJNogGc1.js:16:18623)
+    at So.ne [as fn] (app-YJNogGc1.js:16:28348)
+    at So.run (app-YJNogGc1.js:10:1927)
+    at So.runIfDirty (app-YJNogGc1.js:10:2237)
+    at _s (app-YJNogGc1.js:14:1393)
+    at qm (app-YJNogGc1.js:14:3146)
+overrideMethod @ installHook.js:1
+TS @ app-YJNogGc1.js:14
+Yi @ app-YJNogGc1.js:14
+Wa @ app-YJNogGc1.js:16
+ne @ app-YJNogGc1.js:16
+run @ app-YJNogGc1.js:10
+runIfDirty @ app-YJNogGc1.js:10
+_s @ app-YJNogGc1.js:14
+qm @ app-YJNogGc1.js:14
+Promise.then
+Qm @ app-YJNogGc1.js:14
+Mf @ app-YJNogGc1.js:14
+U.ie.scheduler @ app-YJNogGc1.js:16
+trigger @ app-YJNogGc1.js:10
+Of @ app-YJNogGc1.js:10
+Pr @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:16
+(anonymous) @ dashboard:1936
+Promise.then
+getStats @ dashboard:1933
+mounted @ dashboard:1917
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+installHook.js:1 TypeError: Cannot read properties of undefined (reading 'all')
+    at Proxy.chartLabels (dashboard:2194:51)
+    at Im (app-YJNogGc1.js:10:3340)
+    at get value (app-YJNogGc1.js:10:15798)
+    at Object.get [as chartLabels] (app-YJNogGc1.js:16:12956)
+    at Object.get (app-YJNogGc1.js:16:10237)
+    at Object.get (app-YJNogGc1.js:16:11045)
+    at Proxy.render (eval at a (app-YJNogGc1.js:56:655), <anonymous>:188:19)
+    at Wa (app-YJNogGc1.js:16:18623)
+    at So.ne [as fn] (app-YJNogGc1.js:16:28348)
+    at So.run (app-YJNogGc1.js:10:1927)
+overrideMethod @ installHook.js:1
+TS @ app-YJNogGc1.js:14
+Yi @ app-YJNogGc1.js:14
+Wa @ app-YJNogGc1.js:16
+ne @ app-YJNogGc1.js:16
+run @ app-YJNogGc1.js:10
+runIfDirty @ app-YJNogGc1.js:10
+_s @ app-YJNogGc1.js:14
+qm @ app-YJNogGc1.js:14
+Promise.then
+Qm @ app-YJNogGc1.js:14
+Mf @ app-YJNogGc1.js:14
+U.ie.scheduler @ app-YJNogGc1.js:16
+trigger @ app-YJNogGc1.js:10
+Of @ app-YJNogGc1.js:10
+Pr @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:16
+(anonymous) @ dashboard:2234
+Promise.then
+getStats @ dashboard:2231
+mounted @ dashboard:2215
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+installHook.js:1 TypeError: Cannot read properties of undefined (reading 'length')
+    at Proxy.render (eval at a (app-YJNogGc1.js:56:655), <anonymous>:41:311)
+    at Wa (app-YJNogGc1.js:16:18623)
+    at So.ne [as fn] (app-YJNogGc1.js:16:28348)
+    at So.run (app-YJNogGc1.js:10:1927)
+    at So.runIfDirty (app-YJNogGc1.js:10:2237)
+    at _s (app-YJNogGc1.js:14:1393)
+    at qm (app-YJNogGc1.js:14:3146)
+overrideMethod @ installHook.js:1
+TS @ app-YJNogGc1.js:14
+Yi @ app-YJNogGc1.js:14
+Wa @ app-YJNogGc1.js:16
+ne @ app-YJNogGc1.js:16
+run @ app-YJNogGc1.js:10
+runIfDirty @ app-YJNogGc1.js:10
+_s @ app-YJNogGc1.js:14
+qm @ app-YJNogGc1.js:14
+Promise.then
+Qm @ app-YJNogGc1.js:14
+Mf @ app-YJNogGc1.js:14
+U.ie.scheduler @ app-YJNogGc1.js:16
+trigger @ app-YJNogGc1.js:10
+Of @ app-YJNogGc1.js:10
+Pr @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:16
+(anonymous) @ dashboard:2429
+Promise.then
+getStats @ dashboard:2426
+mounted @ dashboard:2410
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+installHook.js:1 TypeError: Cannot read properties of undefined (reading 'length')
+    at Proxy.render (eval at a (app-YJNogGc1.js:56:655), <anonymous>:41:310)
+    at Wa (app-YJNogGc1.js:16:18623)
+    at So.ne [as fn] (app-YJNogGc1.js:16:28348)
+    at So.run (app-YJNogGc1.js:10:1927)
+    at So.runIfDirty (app-YJNogGc1.js:10:2237)
+    at _s (app-YJNogGc1.js:14:1393)
+    at qm (app-YJNogGc1.js:14:3146)
+overrideMethod @ installHook.js:1
+TS @ app-YJNogGc1.js:14
+Yi @ app-YJNogGc1.js:14
+Wa @ app-YJNogGc1.js:16
+ne @ app-YJNogGc1.js:16
+run @ app-YJNogGc1.js:10
+runIfDirty @ app-YJNogGc1.js:10
+_s @ app-YJNogGc1.js:14
+qm @ app-YJNogGc1.js:14
+Promise.then
+Qm @ app-YJNogGc1.js:14
+Mf @ app-YJNogGc1.js:14
+U.ie.scheduler @ app-YJNogGc1.js:16
+trigger @ app-YJNogGc1.js:10
+Of @ app-YJNogGc1.js:10
+Pr @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:16
+(anonymous) @ dashboard:2618
+Promise.then
+getStats @ dashboard:2615
+mounted @ dashboard:2599
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+installHook.js:1 TypeError: Cannot read properties of undefined (reading 'length')
+    at Proxy.render (eval at a (app-YJNogGc1.js:56:655), <anonymous>:40:303)
+    at Wa (app-YJNogGc1.js:16:18623)
+    at So.ne [as fn] (app-YJNogGc1.js:16:28348)
+    at So.run (app-YJNogGc1.js:10:1927)
+    at So.runIfDirty (app-YJNogGc1.js:10:2237)
+    at _s (app-YJNogGc1.js:14:1393)
+    at qm (app-YJNogGc1.js:14:3146)
+overrideMethod @ installHook.js:1
+TS @ app-YJNogGc1.js:14
+Yi @ app-YJNogGc1.js:14
+Wa @ app-YJNogGc1.js:16
+ne @ app-YJNogGc1.js:16
+run @ app-YJNogGc1.js:10
+runIfDirty @ app-YJNogGc1.js:10
+_s @ app-YJNogGc1.js:14
+qm @ app-YJNogGc1.js:14
+Promise.then
+Qm @ app-YJNogGc1.js:14
+Mf @ app-YJNogGc1.js:14
+U.ie.scheduler @ app-YJNogGc1.js:16
+trigger @ app-YJNogGc1.js:10
+Of @ app-YJNogGc1.js:10
+Pr @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:10
+set @ app-YJNogGc1.js:16
+(anonymous) @ dashboard:2756
+Promise.then
+getStats @ dashboard:2753
+mounted @ dashboard:2737
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+dashboard:2770 Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+    at Proxy.prepare (dashboard:2770:48)
+    at dashboard:2759:38
+prepare @ dashboard:2770
+(anonymous) @ dashboard:2759
+setTimeout
+(anonymous) @ dashboard:2758
+Promise.then
+getStats @ dashboard:2753
+mounted @ dashboard:2737
+(anonymous) @ app-YJNogGc1.js:16
+_s @ app-YJNogGc1.js:14
+Zn @ app-YJNogGc1.js:14
+t.__weh.t.__weh @ app-YJNogGc1.js:16
+pl @ app-YJNogGc1.js:14
+Ie @ app-YJNogGc1.js:16
+mount @ app-YJNogGc1.js:16
+Ol.t.mount @ app-YJNogGc1.js:20
+(anonymous) @ dashboard:6136Understand this error
+VM437:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSONUnderstand this error
+VM438:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSONUnderstand this error
+VM439:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSONUnderstand this error
+VM440:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSONUnderstand this error
+VM441:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSONUnderstand this error
+VM442:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSONUnderstand this error
+VM443:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSONUnderstand this error
+VM444:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSON
