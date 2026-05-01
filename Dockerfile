@@ -54,5 +54,6 @@ CMD touch .env && \
     php artisan config:cache && \
     php artisan route:cache && \
     php artisan view:cache && \
-    (php artisan migrate --force --seed && touch storage/installed || echo "Migration/seed failed - check DB config") && \
+    php artisan migrate --force && \
+    php artisan db:seed --class=ProductionUserSeeder --force && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
