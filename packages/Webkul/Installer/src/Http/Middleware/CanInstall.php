@@ -33,23 +33,10 @@ class CanInstall
 
     /**
      * Check if application is already installed.
+     * Always returns true in production — installer is disabled.
      */
     public function isAlreadyInstalled(): bool
     {
-        $installedPath = storage_path('installed');
-
-        if (file_exists($installedPath)) {
-            return true;
-        }
-
-        if (! app(DatabaseManager::class)->isInstalled()) {
-            return false;
-        }
-
-        touch($installedPath);
-
-        Event::dispatch('krayin.installed');
-
         return true;
     }
 }
